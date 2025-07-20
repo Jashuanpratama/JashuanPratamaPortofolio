@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jashuan Pratama - Portofolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const icon = document.getElementById('dark-icon');
+      icon.textContent = icon.textContent === '🌗' ? '🌞' : '🌗';
+    }
+  </script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
+    body {
+      background: linear-gradient(120deg, #1e3a8a, #1e293b);
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: currentColor;
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.2;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+    .glass-card:hover {
+      transform: perspective(600px) rotateY(3deg) scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+    section h2 {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+    ::selection {
+      background-color: #60a5fa;
+      color: white;
+    }
+  </style>
+</head>
+<body class="gradient-bg text-white font-sans dark:bg-black transition-colors duration-500">
+  <video autoplay muted loop class="video-bg">
+    <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/Space_Background2.mp420368.webm" type="video/webm">
+    <source src="https://www.videvo.net/videvo_files/converted/2016_08/preview/Space_Background2.mp420368.mp4" type="video/mp4">
+  </video>
+  <audio id="bg-music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-dreams.mp3" type="audio/mp3">
+  </audio>
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" id="scrollToTop" class="fixed bottom-5 right-5 bg-blue-600 hover:bg-blue-800 text-white px-3 py-2 rounded-full shadow-lg text-lg z-50 hidden">⬆️</button>
+  <button onclick="toggleMusic()" class="fixed bottom-5 left-5 bg-purple-600 hover:bg-purple-800 text-white px-4 py-2 rounded-full shadow-lg text-sm z-50">🎵 Musik</button>
+
+  <header class="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-400">Jashuan Pratama</h1>
+      <nav class="hidden md:flex space-x-6 text-sm">
+        <a href="#home" class="hover:text-blue-300 nav-link">Home</a>
+        <a href="#about" class="hover:text-purple-300 nav-link">About</a>
+        <a href="#portfolio" class="hover:text-pink-300 nav-link">Portfolio</a>
+        <a href="#artikel" class="hover:text-blue-300 nav-link">Artikel</a>
+        <a href="#puisi" class="hover:text-purple-300 nav-link">Puisi</a>
+        <a href="#pengalaman" class="hover:text-pink-300 nav-link">Pengalaman</a>
+        <a href="#kontak" class="hover:text-blue-300 nav-link">Kontak</a>
+      </nav>
+      <button onclick="toggleDarkMode()" class="ml-4 px-3 py-1 bg-white/20 hover:bg-white/30 rounded text-sm">
+        <span id="dark-icon">🌗</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="pt-24 space-y-32 container mx-auto px-4">
+    <!-- Home -->
+    <section id="home" class="text-center min-h-screen flex flex-col justify-center items-center" data-aos="fade-up">
+      <img src="57be838e-d4e3-4ffd-abf3-7b08a177e443.jpg" alt="Foto Profil" class="rounded-full w-36 h-36 shadow-lg border-4 border-blue-400 hover:scale-110 transition-transform duration-300" />
+      <h2 class="text-4xl font-bold mt-6" id="typed"></h2>
+      <p class="text-lg mt-4 max-w-xl">Penjelajah digital yang menyatukan kata, puisi, dan teknologi dalam satu wadah.</p>
+      <div class="flex flex-wrap justify-center gap-4 mt-6">
+        <a href="https://wa.me/6282174143323" target="_blank" class="flex items-center gap-2 bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition">
+          <i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://facebook.com/XiaoRi" target="_blank" class="flex items-center gap-2 bg-blue-700 px-4 py-2 rounded hover:bg-blue-800 transition">
+          <i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://youtube.com/@EducationClips8" target="_blank" class="flex items-center gap-2 bg-red-600 px-4 py-2 rounded hover:bg-red-700 transition">
+          <i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://tiktok.com/@experentiascriptor" target="_blank" class="flex items-center gap-2 bg-black px-4 py-2 rounded hover:bg-gray-800 transition">
+          <i class="fab fa-tiktok"></i> TikTok</a>
+        <a href="https://github.com/Jashuanpratama" target="_blank" class="flex items-center gap-2 bg-gray-700 px-4 py-2 rounded hover:bg-gray-800 transition">
+          <i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">Tentang Saya</h2>
+      <p class="max-w-2xl mx-auto">Saya adalah seorang pengembang web dan penulis yang senang mengeksplorasi teknologi, menulis puisi, serta membagikan pengalaman melalui artikel. Saya percaya bahwa kreativitas dan teknologi bisa berjalan beriringan.</p>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">Portfolio</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6">
+          <h3 class="text-lg font-semibold">Website Pribadi</h3>
+          <p class="text-sm">Website portofolio ini, dibangun dengan Tailwind CSS dan animasi modern.</p>
+        </div>
+        <div class="glass-card p-6">
+          <h3 class="text-lg font-semibold">Blog Teknologi</h3>
+          <p class="text-sm">Platform untuk berbagi artikel seputar coding dan perkembangan teknologi.</p>
+        </div>
+        <div class="glass-card p-6">
+          <h3 class="text-lg font-semibold">Puisi Interaktif</h3>
+          <p class="text-sm">Kumpulan puisi yang dikemas dalam desain menarik dan interaktif.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artikel -->
+    <section id="artikel" class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">Artikel</h2>
+      <p class="mb-4">Tulisan reflektif, teknologi, dan inspirasi kehidupan.</p>
+      <p class="italic">"Teknologi hanyalah alat. Isi dari karya tetap berasal dari hati manusia."</p>
+    </section>
+
+    <!-- Puisi -->
+    <section id="puisi" class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">Puisi</h2>
+      <blockquote class="italic text-lg">“Di antara kode dan layar biru, aku tulis rindu tanpa tahu waktu.”</blockquote>
+    </section>
+
+    <!-- Pengalaman -->
+    <section id="pengalaman" class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">Pengalaman</h2>
+      <ul class="space-y-2 max-w-xl mx-auto">
+        <li>🌟 2022: Membuat blog pribadi dan mengelola konten teknologi</li>
+        <li>📚 2023: Menjadi kontributor puisi digital di platform seni</li>
+        <li>💻 2024: Freelance web developer & content creator</li>
+      </ul>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-4">Hubungi Saya</h2>
+      <p>Kamu bisa menghubungi saya melalui media sosial di atas, atau langsung kirim email ke:</p>
+      <p class="mt-2 font-semibold text-blue-400">educationclips8@gmail.com</p>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 text-white text-sm mt-16">
+    © 2025 Jashuan Pratama. Dibuat dengan semangat kreatif 🌟
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+  <script>
+    const scrollBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+  </script>
+  <script>
+    new Typed('#typed', {
+      strings: [
+        "Penjelajah digital & kreator kata.",
+        "Frontend Web Developer.",
+        "Penulis & Penyair Digital.",
+        "Pencinta teknologi dan seni."
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      loop: true
+    });
+  </script>
+  <script>
+    function toggleMusic() {
+      const audio = document.getElementById('bg-music');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+</html>
